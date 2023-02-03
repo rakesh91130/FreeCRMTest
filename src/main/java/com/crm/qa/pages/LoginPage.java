@@ -39,11 +39,11 @@ public class LoginPage extends TestBase {
 	}
 	
 	
-//	public String selectLogin() {
-//		loginBtn.click();
-//		String title =validateLoginPageTitle();
-//		return title;
-//	}
+	public String selectLogin() {
+		loginBtn.click();
+		String title =validateLoginPageTitle();
+		return title;
+	}
 	
 	public HomePage login(String uname, String pass) {
 		loginBtn.click();

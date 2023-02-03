@@ -38,18 +38,25 @@ public class LoginPageTest extends TestBase {
 			Assert.assertEquals(title, "Free CRM Software for every business");
 		}catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			TestCaseHeaderFooter.endFrameworkReports();
-			softAssert.assertAll();
 		}
 	}
 
 
-	//	@Test(priority = 2)
-	//	public void SelectionOfLoginPage() {
-	//		String titleLogin = loginPage.selectLogin();
-	//		Assert.assertEquals(titleLogin, "Cogmento CRM");
-	//	}
+		@Test(priority = 2)
+		public void SelectionOfLoginPage() {
+			try {
+				
+				String titleLogin = loginPage.selectLogin();
+				//Assert.assertEquals(titleLogin, "Cogmento CRM");
+				util.ValidationFor2Fields(titleLogin, "Cogmento CRM", "Login page", "Login page Title", softAssert);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				TestCaseHeaderFooter.endFrameworkReports();
+				softAssert.assertAll();
+			}
+		}
 
 	//@Test(priority = 2)
 	public void login() {
