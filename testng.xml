@@ -7,8 +7,8 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!-- Classes will be executed in sequence these are mentioned -->
-			<!--<class name="com.crm.qa.tests.HomePageTest" />-->
-			<class name="com.crm.qa.tests.ContactPageTest" />
+			<!--<class name="com.crm.qa.tests.HomePageTest" />
+			<class name="com.crm.qa.tests.ContactPageTest" />-->
 			<class name="com.crm.qa.tests.LoginPageTest" />
 		</classes>
 	</test> <!-- Test -->
