@@ -15,7 +15,9 @@ public class TestCaseHeaderFooter extends ExtentReporting{
 
 	public static ExtentTest startFrameworkReports() {
 		String reportPath = "Reports/ExtentReports";
+		ExtentHtmlReporter hmtlReporter = null;
 		try {
+			String session  = System.getProperty("session");
 			Date date = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("dd_MM_YY");
 			String sysDate = format.format(date);
@@ -29,21 +31,29 @@ public class TestCaseHeaderFooter extends ExtentReporting{
 				System.out.println("create dir "+success);
 			}
 
-			System.out.println(reportDir+"//Extent_Report_"+sysDate+"_.html");
+			
 			//extentReports = new ExtentReports(reportDir+"Extent_Report_"+sysDate+"_.html");
 			extentReports = new ExtentReports();
-			ExtentHtmlReporter hmtlReporter = new ExtentHtmlReporter(reportDir+"//Extent_Report_"+sysDate+".html");
+
+			if (session==null) {
+				System.out.println(reportDir+"//Extent_Report_"+sysDate+"_.html");
+				hmtlReporter = new ExtentHtmlReporter(reportDir+"//Extent_Report_"+sysDate+".html");	
+			}
+			else {
+				System.out.println(reportDir+"//Extent_Report_"+sysDate+"_"+session+"_.html");
+				hmtlReporter = new ExtentHtmlReporter(reportDir+"//Extent_Report_"+sysDate+"_"+session+".html");	
+			}
 			hmtlReporter.setAppendExisting(true);
 			//ExtentSparkReporter spark  = new ExtentSparkReporter(reportDir+"//Extent_Report_"+sysDate+"_.html");
-			
-			
+
+
 			extentReports.attachReporter(hmtlReporter);
 			extentReports.setSystemInfo("userName", "rakesh kumar");
 			extentReports.setSystemInfo("Company","Test");
 
 			System.out.println(System.getProperty("module"));
 			logger = extentReports.createTest(System.getProperty("module"));
-			
+
 
 		} catch (Exception e) {
 			//throw new FlexFrameworkRuntimeException(e);
@@ -52,18 +62,18 @@ public class TestCaseHeaderFooter extends ExtentReporting{
 
 		return logger;
 	}
-	
-	
-	
+
+
+
 	/***Method end extent reporting***/
 	public static  void endFrameworkReports() {
-		
-		
+
+
 		try {
-//			System.out.println(logger.getDescription());
-//			System.out.println(logger.getStartedTime().toString());
-//			System.out.println("project name "+extentReports.getProjectName());
-		//	extentReports.endTest(logger);
+			//			System.out.println(logger.getDescription());
+			//			System.out.println(logger.getStartedTime().toString());
+			//			System.out.println("project name "+extentReports.getProjectName());
+			//	extentReports.endTest(logger);
 			System.out.println("reached here");
 			extentReports.flush();
 			System.out.println("reached here1");
@@ -71,9 +81,9 @@ public class TestCaseHeaderFooter extends ExtentReporting{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
+
+
 
 }
