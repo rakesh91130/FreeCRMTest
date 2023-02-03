@@ -34,7 +34,7 @@ public class LoginPageTest extends TestBase {
 			System.setProperty("module","<br>"+this.getClass().getSimpleName());
 			TestCaseHeaderFooter.startFrameworkReports();
 			String title = loginPage.validateLoginPageTitle();
-			//util.ValidationFor2Fields(title, "#1 Free CRM Software for every business", "Login page", "Title", softAssert);
+			util.ValidationFor2Fields(title, "#1 Free CRM Software for every business", "Login page", "Title", softAssert);
 			Assert.assertEquals(title, "Free CRM Software for every business");
 		}catch (Exception e) {
 			e.printStackTrace();
