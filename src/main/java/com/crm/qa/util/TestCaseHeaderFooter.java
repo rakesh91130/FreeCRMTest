@@ -38,12 +38,14 @@ public class TestCaseHeaderFooter extends ExtentReporting{
 			if (session==null) {
 				System.out.println(reportDir+"//Extent_Report_"+sysDate+"_.html");
 				hmtlReporter = new ExtentHtmlReporter(reportDir+"//Extent_Report_"+sysDate+".html");	
+				hmtlReporter.setAppendExisting(true);
 			}
 			else {
 				System.out.println(reportDir+"//Extent_Report_"+sysDate+"_"+session+"_.html");
 				hmtlReporter = new ExtentHtmlReporter(reportDir+"//Extent_Report_"+sysDate+"_"+session+".html");	
+				hmtlReporter.setAppendExisting(false);
 			}
-			hmtlReporter.setAppendExisting(true);
+			
 			//ExtentSparkReporter spark  = new ExtentSparkReporter(reportDir+"//Extent_Report_"+sysDate+"_.html");
 
 
