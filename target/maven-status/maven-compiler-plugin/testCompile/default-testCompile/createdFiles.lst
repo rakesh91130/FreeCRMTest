@@ -1,0 +1,6 @@
+analyzer\Listener.class
+analyzer\RetryAnalyzer.class
+com\crm\qa\tests\ContactPageTest.class
+com\crm\qa\tests\HomePageTest.class
+com\crm\qa\tests\ListenerTests.class
+com\crm\qa\tests\LoginPageTest.class
